@@ -9,9 +9,9 @@ public class BoardController {
 
     Board board = new Board();
 
-    @GetMapping
+    @GetMapping("/")
     public String board(Model model) {
-        model.addAttribute("board", board);
+        // model.addAttribute("board", board);
         return "board";
     }
 }

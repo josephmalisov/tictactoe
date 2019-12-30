@@ -44,5 +44,36 @@ class BoardTests {
         String[][] arrays = new String[][] {row1, row2, row3};
         Board board = new Board(arrays);
         assertTrue(board.check());
+
+        row1 = new String[] {"","","x"};
+        row2 = new String[] {"","",""};
+        row3 = new String[] {"","",""};
+        arrays = new String[][] {row1, row2, row3};
+        board = new Board(arrays);
+        assertFalse(board.check());
+    }
+
+    @Test
+    public void diagonal() {
+        String[] row1 = new String[] {"x","",""};
+        String[] row2 = new String[] {"","x",""};
+        String[] row3 = new String[] {"x","","x"};
+        String[][] arrays = new String[][] {row1, row2, row3};
+        Board board = new Board(arrays);
+        assertTrue(board.check());
+
+        row1 = new String[] {"","","x"};
+        row2 = new String[] {"","x",""};
+        row3 = new String[] {"x","",""};
+        arrays = new String[][] {row1, row2, row3};
+        board = new Board(arrays);
+        assertTrue(board.check());
+
+        row1 = new String[] {"","","x"};
+        row2 = new String[] {"","",""};
+        row3 = new String[] {"x","",""};
+        arrays = new String[][] {row1, row2, row3};
+        board = new Board(arrays);
+        assertFalse(board.check());
     }
 }
