@@ -1,0 +1,12 @@
+body {
+    background-color: aqua;
+}
+
+.row {
+    display: inline-block;
+    list-style-type: none;
+}
+
+p {
+    border-style: ridge;
+}

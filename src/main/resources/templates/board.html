@@ -3,20 +3,19 @@
 <html xmlns:th="http://www.thymeleaf.org">
 
 <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Tic Tac Toe</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 
 <body>
-    <div class=neesh>
-        <ul th:each="row : ${board.getBoard()}">
-            <ul th:each="spot : ${row}">
-                <li>
-                    <p th:text="${spot}"></p>
-                </li>
-            </ul>
-        </ul>
-    </div>
+    <table>
+        <tr th:each="row : ${board.getBoard()}">
+            <td th:each="spot : ${row}">
+                <p th:text="${spot}"></p>
+            </td>
+        </tr>
+    </table>
 </body>
 
 </html>

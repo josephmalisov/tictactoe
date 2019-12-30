@@ -9,7 +9,7 @@ public class BoardController {
 
     String[] row1 = new String[] { "x", "", "" };
     String[] row2 = new String[] { "", "x", "" };
-    String[] row3 = new String[] { "x", "", "x" };
+    String[] row3 = new String[] { "x", "x", "x" };
     String[][] arrays = new String[][] { row1, row2, row3 };
     Board board = new Board(arrays);
 
