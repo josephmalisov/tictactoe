@@ -2,7 +2,15 @@ package com.joemalisov.tictactoe;
 
 public class Board {
 
-    String[][] board;
+    private String[][] board;
+
+    public String[][] getBoard() {
+        return this.board;
+    }
+
+    public void setBoard(String[][] board) {
+        this.board = board;
+    }
 
     Board() {
         board = new String[3][3];

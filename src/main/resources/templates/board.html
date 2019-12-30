@@ -8,7 +8,15 @@
 </head>
 
 <body>
-    <p></p>
+    <div class=neesh>
+        <ul th:each="row : ${board.getBoard()}">
+            <ul th:each="spot : ${row}">
+                <li>
+                    <p th:text="${spot}"></p>
+                </li>
+            </ul>
+        </ul>
+    </div>
 </body>
 
 </html>
