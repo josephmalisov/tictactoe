@@ -12,6 +12,16 @@ public class Board {
         this.board = board;
     }
 
+    public boolean setBoard(String toThis, int row, int col) throws Exception {
+        try {
+            board[row][col] = toThis;
+            return true;
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+    }
+
     Board() {
         board = new String[3][3];
     }

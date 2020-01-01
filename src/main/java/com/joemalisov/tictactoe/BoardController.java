@@ -3,6 +3,8 @@ package com.joemalisov.tictactoe;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class BoardController {
@@ -17,5 +19,11 @@ public class BoardController {
     public String board(Model model) {
         model.addAttribute("board", board);
         return "board";
+    }
+
+    @PostMapping("/")
+    public String board(@ModelAttribute Board board) {
+        this.board = board;
+        return "/";
     }
 }
