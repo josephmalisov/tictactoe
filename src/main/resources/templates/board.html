@@ -9,20 +9,22 @@
 </head>
 
 <body>
-    <!-- <table>
+    <p th:text="${winbool}"></p>
+    <table>
         <tr th:each="row : ${board.getBoard()}">
             <td th:each="spot : ${row}">
-                <form action="#" th:action="@{/}" th:object="${newThing}" method="post">
-                    <p><input type="text" th:field="*{newThing}" /></p>
+                <form action="#" th:action="@{/}" th:object="${newBoard}" method="post">
+                    <p><input type="text" th:field="*{board}" /></p>
                 </form>
             </td>
         </tr>
-    </table> -->
-    <form action="#" th:action="@{/}" th:object="${row}" method="post">
+    </table>
+    <p><input type="submit" value="Submit" />
+        <!-- <form th:action="@{/}" th:object="${row}" method="post">
         <p>Row: <input type="text" th:field="*{row}" /></p>
         <p>Column: <input type="text" th:field="*{col}" /></p>
         <p><input type="submit" value="Submit" />
-    </form>
+    </form> -->
 </body>
 
 </html>

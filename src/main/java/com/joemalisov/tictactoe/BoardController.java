@@ -15,23 +15,23 @@ public class BoardController {
 
     String[] row1 = new String[] { "x", "", "" };
     String[] row2 = new String[] { "", "x", "" };
-    String[] row3 = new String[] { "x", "x", "x" };
+    String[] row3 = new String[] { "x", "x", "" };
     String[][] arrays = new String[][] { row1, row2, row3 };
     Board board = new Board(arrays);
 
     @GetMapping("/")
     public String board(Model model) {
         model.addAttribute("board", board);
-        model.addAttribute("newThing", newThing);
-        model.addAttribute("row", row);
-        model.addAttribute("col", col);
+        // model.addAttribute("row", row);
+        // model.addAttribute("col", col);
+        model.addAttribute("winbool", board.check());
         return "board";
     }
 
     @PostMapping("/")
-    public String board(@ModelAttribute String newThing, @ModelAttribute int row, @ModelAttribute int col)
+    public String board(@ModelAttribute Board newBoard)
             throws Exception {
-        board.setBoard(newThing, row, col);
+        board = newBoard;
         return "/";
     }
 }
