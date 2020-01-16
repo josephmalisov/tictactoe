@@ -9,16 +9,20 @@
 </head>
 
 <body>
-    <table>
+    <!-- <table>
         <tr th:each="row : ${board.getBoard()}">
             <td th:each="spot : ${row}">
-                <form action="#" th:action="@{/}" th:object="${String}" method="post">
-                    <p><input type="text" th:field="*{board.setBoard()}" /></p>
-                    <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+                <form action="#" th:action="@{/}" th:object="${newThing}" method="post">
+                    <p><input type="text" th:field="*{newThing}" /></p>
                 </form>
             </td>
         </tr>
-    </table>
+    </table> -->
+    <form action="#" th:action="@{/}" th:object="${row}" method="post">
+        <p>Row: <input type="text" th:field="*{row}" /></p>
+        <p>Column: <input type="text" th:field="*{col}" /></p>
+        <p><input type="submit" value="Submit" />
+    </form>
 </body>
 
 </html>

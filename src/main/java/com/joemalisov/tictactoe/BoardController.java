@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class BoardController {
 
+    String newThing;
+    int row = -1;
+    int col = -1;
+
     String[] row1 = new String[] { "x", "", "" };
     String[] row2 = new String[] { "", "x", "" };
     String[] row3 = new String[] { "x", "x", "x" };
@@ -18,12 +22,16 @@ public class BoardController {
     @GetMapping("/")
     public String board(Model model) {
         model.addAttribute("board", board);
+        model.addAttribute("newThing", newThing);
+        model.addAttribute("row", row);
+        model.addAttribute("col", col);
         return "board";
     }
 
     @PostMapping("/")
-    public String board(@ModelAttribute Board board) {
-        this.board = board;
+    public String board(@ModelAttribute String newThing, @ModelAttribute int row, @ModelAttribute int col)
+            throws Exception {
+        board.setBoard(newThing, row, col);
         return "/";
     }
 }
