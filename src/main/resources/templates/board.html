@@ -13,7 +13,7 @@
     <table>
         <tr th:each="row : ${board.getBoard()}">
             <td th:each="spot : ${row}">
-                <form action="#" th:action="@{/}" th:object="${newBoard}" method="post">
+                <form action="#" th:action="@{/}" th:object="${board}" method="post">
                     <p><input type="text" th:field="*{board}" /></p>
                 </form>
             </td>
